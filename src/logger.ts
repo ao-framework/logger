@@ -1,5 +1,22 @@
+/**
+ * ### @ao-framework > logger
+ * 
+ * Abstract class definition for the creating
+ * custom loggers where the developer only has
+ * to handle the implementation
+ */
 export default abstract class Logger {
 
+    /**
+     * ### @ao-framework > logger > interpolate
+     * 
+     * Method to handle interpolation to recursively combine
+     * a context with a message. Usually this done directly
+     * in javascript. However, there maybe times when code 
+     * would smell better using this interpolation
+     * @param message 
+     * @param context 
+     */
     protected interpolate(message: string, context?: object) {
         if (typeof context === "object" && (context !== null && context !== undefined)) {
             return message.replace(/\$\{(.*?)\}/g, (match, capture: string) => {
@@ -11,7 +28,12 @@ export default abstract class Logger {
     }
 
     /**
+     * ### @ao-framework > logger > implementation
+     * 
      * Manage the implementation
+     * 
+     * This is specific the logger the developer
+     * is trying to create.
      * @param type 
      * @param message 
      * @param context 
@@ -21,6 +43,8 @@ export default abstract class Logger {
     }
 
     /**
+     * ### @ao-framework > logger > emergency
+     * 
      * System is unusable.
      * @param message 
      * @param context 
@@ -30,6 +54,8 @@ export default abstract class Logger {
     }
 
     /**
+     * ### @ao-framework > logger > alert
+     * 
      * Action must be taken immediately.
      *
      * Example: Entire website down, database unavailable, etc. This should
@@ -42,6 +68,8 @@ export default abstract class Logger {
     }
 
     /**
+     * ### @ao-framework > logger > critical
+     * 
      * Critical conditions.
      *
      * Example: Application component unavailable, unexpected exception.
@@ -53,6 +81,8 @@ export default abstract class Logger {
     }
 
     /**
+     * ### @ao-framework > logger > error
+     * 
      * Runtime errors that do not require immediate action but should typically
      * be logged and monitored.
      * @param message 
@@ -63,6 +93,8 @@ export default abstract class Logger {
     }
 
     /**
+     * ### @ao-framework > logger > warning
+     * 
      * Exceptional occurrences that are not errors.
      *
      * Example: Use of deprecated APIs, poor use of an API, undesirable things
@@ -75,6 +107,8 @@ export default abstract class Logger {
     }
 
     /**
+     * ### @ao-framework > logger > notice
+     * 
      * Normal but significant events.
      * @param message 
      * @param context 
@@ -84,6 +118,8 @@ export default abstract class Logger {
     }
 
     /**
+     * ### @ao-framework > logger > info
+     * 
      *  Interesting events.
      *
      * Example: User logs in, SQL logs.
@@ -95,6 +131,8 @@ export default abstract class Logger {
     }
 
     /**
+     * ### @ao-framework > logger > debug
+     * 
      * Detailed debug information.
      * @param message 
      * @param context 
@@ -104,6 +142,8 @@ export default abstract class Logger {
     }
 
     /**
+     * ### @ao-framework > logger > log
+     * 
      * Logs with an arbitrary level.
      * @param level 
      * @param message 
