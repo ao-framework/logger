@@ -1,4 +1,5 @@
 import { MyLogger } from "./@entry";
+
 export function log(done) {
     let logger = new MyLogger();
     logger.events.on("something-special", (level, message) => {

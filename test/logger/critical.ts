@@ -1,4 +1,5 @@
 import { MyLogger } from "./@entry";
+
 export function critical(done) {
     let logger = new MyLogger();
     logger.events.on("critical", (level, message) => {

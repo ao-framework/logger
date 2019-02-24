@@ -1,4 +1,5 @@
 import { MyLogger } from "./@entry";
+
 export function interpolate() {
     let logger = new MyLogger();
     let logmessage = logger.testInterpolation("Hello ${name}", { name: "J.D. Crowe" });

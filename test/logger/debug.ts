@@ -1,4 +1,5 @@
 import { MyLogger } from "./@entry";
+
 export function debug(done) {
     let logger = new MyLogger();
     logger.events.on("debug", (level, message) => {
