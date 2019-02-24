@@ -16,8 +16,11 @@ export class MyLogger extends Logger {
     public events = new EventEmitter();
 
     protected implementation(level: string, message: string) {
-        super.implementation(level, message);
-        this.events.emit(level, level, message);
+        return new Promise((done) => {
+            super.implementation(level, message);
+            this.events.emit(level, level, message);
+            done();
+        })
     }
 
     public testInterpolation(message: string, context: object) {

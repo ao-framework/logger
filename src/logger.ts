@@ -38,8 +38,8 @@ export default abstract class Logger {
      * @param message 
      * @param context 
      */
-    protected implementation(level: string, message: string) {
-        //silence is not golden
+    protected implementation(level: string, message: string): Promise<any> {
+        return Promise.resolve()
     }
 
     /**
@@ -50,7 +50,7 @@ export default abstract class Logger {
      * @param context 
      */
     public emergency(message: string, context?: object) {
-        this.implementation("emergency", this.interpolate(message, context));
+        return this.implementation("emergency", this.interpolate(message, context));
     }
 
     /**
@@ -64,7 +64,7 @@ export default abstract class Logger {
      * @param context 
      */
     public alert(message: string, context?: object) {
-        this.implementation("alert", this.interpolate(message, context));
+        return this.implementation("alert", this.interpolate(message, context));
     }
 
     /**
@@ -77,7 +77,7 @@ export default abstract class Logger {
      * @param context 
      */
     public critical(message: string, context?: object) {
-        this.implementation("critical", this.interpolate(message, context));
+        return this.implementation("critical", this.interpolate(message, context));
     }
 
     /**
@@ -89,7 +89,7 @@ export default abstract class Logger {
      * @param context 
      */
     public error(message: string, context?: object) {
-        this.implementation("error", this.interpolate(message, context));
+        return this.implementation("error", this.interpolate(message, context));
     }
 
     /**
@@ -103,7 +103,7 @@ export default abstract class Logger {
      * @param context 
      */
     public warning(message: string, context?: object) {
-        this.implementation("warning", this.interpolate(message, context));
+        return this.implementation("warning", this.interpolate(message, context));
     }
 
     /**
@@ -114,7 +114,7 @@ export default abstract class Logger {
      * @param context 
      */
     public notice(message: string, context?: object) {
-        this.implementation("notice", this.interpolate(message, context));
+        return this.implementation("notice", this.interpolate(message, context));
     }
 
     /**
@@ -127,7 +127,7 @@ export default abstract class Logger {
      * @param context 
      */
     public info(message: string, context?: object) {
-        this.implementation("info", this.interpolate(message, context));
+        return this.implementation("info", this.interpolate(message, context));
     }
 
     /**
@@ -138,7 +138,7 @@ export default abstract class Logger {
      * @param context 
      */
     public debug(message: string, context?: object) {
-        this.implementation("debug", this.interpolate(message, context));
+        return this.implementation("debug", this.interpolate(message, context));
     }
 
     /**
@@ -150,6 +150,6 @@ export default abstract class Logger {
      * @param context 
      */
     public log(level: string, message: string, context?: object) {
-        this.implementation(level, this.interpolate(message, context));
+        return this.implementation(level, this.interpolate(message, context));
     }
 }
