@@ -6,6 +6,8 @@
 
 Abstract class definition for the creating custom loggers where the developer only has to handle the implementation
 
+Inspired by PSR-3 created by the PHP-FIG team. Thanks!!
+
 ## Hierarchy
 
 **Logger**
@@ -36,7 +38,7 @@ Abstract class definition for the creating custom loggers where the developer on
 
 ▸ **alert**(message: *`string`*, context?: *`object`*): `Promise`<`any`>
 
-*Defined in [logger.ts:66](https://github.com/ao-framework/logger/blob/07c3b86/src/logger.ts#L66)*
+*Defined in [logger.ts:70](https://github.com/ao-framework/logger/blob/ef019ce/src/logger.ts#L70)*
 
 ### @ao-framework > logger > alert
 
@@ -60,7 +62,7 @@ ___
 
 ▸ **critical**(message: *`string`*, context?: *`object`*): `Promise`<`any`>
 
-*Defined in [logger.ts:79](https://github.com/ao-framework/logger/blob/07c3b86/src/logger.ts#L79)*
+*Defined in [logger.ts:84](https://github.com/ao-framework/logger/blob/ef019ce/src/logger.ts#L84)*
 
 ### @ao-framework > logger > critical
 
@@ -84,7 +86,7 @@ ___
 
 ▸ **debug**(message: *`string`*, context?: *`object`*): `Promise`<`any`>
 
-*Defined in [logger.ts:140](https://github.com/ao-framework/logger/blob/07c3b86/src/logger.ts#L140)*
+*Defined in [logger.ts:150](https://github.com/ao-framework/logger/blob/ef019ce/src/logger.ts#L150)*
 
 ### @ao-framework > logger > debug
 
@@ -106,7 +108,7 @@ ___
 
 ▸ **emergency**(message: *`string`*, context?: *`object`*): `Promise`<`any`>
 
-*Defined in [logger.ts:52](https://github.com/ao-framework/logger/blob/07c3b86/src/logger.ts#L52)*
+*Defined in [logger.ts:55](https://github.com/ao-framework/logger/blob/ef019ce/src/logger.ts#L55)*
 
 ### @ao-framework > logger > emergency
 
@@ -128,7 +130,7 @@ ___
 
 ▸ **error**(message: *`string`*, context?: *`object`*): `Promise`<`any`>
 
-*Defined in [logger.ts:91](https://github.com/ao-framework/logger/blob/07c3b86/src/logger.ts#L91)*
+*Defined in [logger.ts:97](https://github.com/ao-framework/logger/blob/ef019ce/src/logger.ts#L97)*
 
 ### @ao-framework > logger > error
 
@@ -150,13 +152,11 @@ ___
 
 ▸ **implementation**(level: *`string`*, message: *`string`*): `Promise`<`any`>
 
-*Defined in [logger.ts:41](https://github.com/ao-framework/logger/blob/07c3b86/src/logger.ts#L41)*
+*Defined in [logger.ts:43](https://github.com/ao-framework/logger/blob/ef019ce/src/logger.ts#L43)*
 
 ### @ao-framework > logger > implementation
 
-Manage the implementation
-
-This is specific the logger the developer is trying to create.
+Create the implementation of this specific logger
 
 **Parameters:**
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **info**(message: *`string`*, context?: *`object`*): `Promise`<`any`>
 
-*Defined in [logger.ts:129](https://github.com/ao-framework/logger/blob/07c3b86/src/logger.ts#L129)*
+*Defined in [logger.ts:138](https://github.com/ao-framework/logger/blob/ef019ce/src/logger.ts#L138)*
 
 ### @ao-framework > logger > info
 
@@ -198,11 +198,11 @@ ___
 
 ▸ **interpolate**(message: *`string`*, context?: *`object`*): `string`
 
-*Defined in [logger.ts:20](https://github.com/ao-framework/logger/blob/07c3b86/src/logger.ts#L20)*
+*Defined in [logger.ts:24](https://github.com/ao-framework/logger/blob/ef019ce/src/logger.ts#L24)*
 
 ### @ao-framework > logger > interpolate
 
-Method to handle interpolation to recursively combine a context with a message. Usually this done directly in javascript. However, there maybe times when code would smell better using this interpolation
+Method to handle interpolation to recursively combine a context with a message. Usually this is done directly with javascript. However, there maybe times when a piece of code would smell better using this version of interpolation.
 
 **Parameters:**
 
@@ -220,7 +220,7 @@ ___
 
 ▸ **log**(level: *`string`*, message: *`string`*, context?: *`object`*): `Promise`<`any`>
 
-*Defined in [logger.ts:152](https://github.com/ao-framework/logger/blob/07c3b86/src/logger.ts#L152)*
+*Defined in [logger.ts:163](https://github.com/ao-framework/logger/blob/ef019ce/src/logger.ts#L163)*
 
 ### @ao-framework > logger > log
 
@@ -243,7 +243,7 @@ ___
 
 ▸ **notice**(message: *`string`*, context?: *`object`*): `Promise`<`any`>
 
-*Defined in [logger.ts:116](https://github.com/ao-framework/logger/blob/07c3b86/src/logger.ts#L116)*
+*Defined in [logger.ts:124](https://github.com/ao-framework/logger/blob/ef019ce/src/logger.ts#L124)*
 
 ### @ao-framework > logger > notice
 
@@ -265,7 +265,7 @@ ___
 
 ▸ **warning**(message: *`string`*, context?: *`object`*): `Promise`<`any`>
 
-*Defined in [logger.ts:105](https://github.com/ao-framework/logger/blob/07c3b86/src/logger.ts#L105)*
+*Defined in [logger.ts:112](https://github.com/ao-framework/logger/blob/ef019ce/src/logger.ts#L112)*
 
 ### @ao-framework > logger > warning
 

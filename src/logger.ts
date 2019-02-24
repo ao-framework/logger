@@ -4,6 +4,9 @@
  * Abstract class definition for the creating
  * custom loggers where the developer only has
  * to handle the implementation
+ * 
+ * Inspired by PSR-3 created by the PHP-FIG team.
+ * Thanks!!
  */
 export default abstract class Logger {
 
@@ -11,9 +14,10 @@ export default abstract class Logger {
      * ### @ao-framework > logger > interpolate
      * 
      * Method to handle interpolation to recursively combine
-     * a context with a message. Usually this done directly
-     * in javascript. However, there maybe times when code 
-     * would smell better using this interpolation
+     * a context with a message. Usually this is done directly
+     * with javascript. However, there maybe times when a piece of 
+     * code would smell better using this version of interpolation.
+     * 
      * @param message The message to use in the interpolation
      * @param context The context data to use with the message
      */
@@ -30,10 +34,8 @@ export default abstract class Logger {
     /**
      * ### @ao-framework > logger > implementation
      * 
-     * Manage the implementation
+     * Create the implementation of this specific logger
      * 
-     * This is specific the logger the developer
-     * is trying to create.
      * @param level The level of the log entry 
      * @param message The message to log
      * @param context The context data to use with the message
@@ -46,6 +48,7 @@ export default abstract class Logger {
      * ### @ao-framework > logger > emergency
      * 
      * System is unusable.
+     * 
      * @param message The message to log
      * @param context The context data to use with the message
      */
@@ -60,6 +63,7 @@ export default abstract class Logger {
      *
      * Example: Entire website down, database unavailable, etc. This should
      * trigger the SMS alerts and wake you up.
+     * 
      * @param message The message to log
      * @param context The context data to use with the message
      */
@@ -73,6 +77,7 @@ export default abstract class Logger {
      * Critical conditions.
      *
      * Example: Application component unavailable, unexpected exception.
+     * 
      * @param message The message to log
      * @param context The context data to use with the message
      */
@@ -85,6 +90,7 @@ export default abstract class Logger {
      * 
      * Runtime errors that do not require immediate action but should typically
      * be logged and monitored.
+     * 
      * @param message The message to log
      * @param context The context data to use with the message
      */
@@ -99,6 +105,7 @@ export default abstract class Logger {
      *
      * Example: Use of deprecated APIs, poor use of an API, undesirable things
      * that are not necessarily wrong.
+     * 
      * @param message The message to log
      * @param context The context data to use with the message
      */
@@ -110,6 +117,7 @@ export default abstract class Logger {
      * ### @ao-framework > logger > notice
      * 
      * Normal but significant events.
+     * 
      * @param message The message to log
      * @param context The context data to use with the message
      */
@@ -123,6 +131,7 @@ export default abstract class Logger {
      *  Interesting events.
      *
      * Example: User logs in, SQL logs.
+     * 
      * @param message The message to log
      * @param context The context data to use with the message
      */
@@ -134,6 +143,7 @@ export default abstract class Logger {
      * ### @ao-framework > logger > debug
      * 
      * Detailed debug information.
+     * 
      * @param message The message to log
      * @param context The context data to use with the message
      */
@@ -145,6 +155,7 @@ export default abstract class Logger {
      * ### @ao-framework > logger > log
      * 
      * Logs with an arbitrary level.
+     * 
      * @param level The level of the log entry 
      * @param message The message to log
      * @param context The context data to use with the message
