@@ -1,7 +1,7 @@
 {
     "name": "@ao-framework/logger",
     "version": "0.0.1",
-    "description": "{{description}}",
+    "description": "The logger is an abstract class that allows you to create custom loggers where you can define a  specific implementation without having to worry about specific methods commonly used in the practice of logging information in applications.",
     "main": "dist/src/index",
     "types": "dist/src/index.d.ts",
     "scripts": {
