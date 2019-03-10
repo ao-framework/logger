@@ -1,8 +1,6 @@
 import LoggerSync from "./logger.sync";
 
 /**
- * ### @ao-framework > logger
- * 
  * Abstract class definition for the creating
  * custom loggers where the developer only has
  * to handle the implementation
