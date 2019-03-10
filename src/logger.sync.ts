@@ -1,5 +1,3 @@
-import LoggerSync from "./logger.sync";
-
 /**
  * ### @ao-framework > logger
  * 
@@ -10,7 +8,7 @@ import LoggerSync from "./logger.sync";
  * Inspired by PSR-3 created by the PHP-FIG team.
  * Thanks!!
  */
-export default abstract class Logger extends LoggerSync {
+export default abstract class LoggerSync {
 
     /**
      * Method to handle interpolation to recursively combine
@@ -38,9 +36,7 @@ export default abstract class Logger extends LoggerSync {
      * @param message The message to log
      * @param context The context data to use with the message
      */
-    protected implementation(level: string, message: string): Promise<any> {
-        return Promise.resolve()
-    }
+    protected implementationSync(level: string, message: string): any { }
 
     /**
      * System is unusable.
@@ -48,8 +44,8 @@ export default abstract class Logger extends LoggerSync {
      * @param message The message to log
      * @param context The context data to use with the message
      */
-    public emergency(message: string, context?: object) {
-        return this.implementation("emergency", this.interpolate(message, context));
+    public emergencySync(message: string, context?: object) {
+        return this.implementationSync("emergency", this.interpolate(message, context));
     }
 
     /**
@@ -61,8 +57,8 @@ export default abstract class Logger extends LoggerSync {
      * @param message The message to log
      * @param context The context data to use with the message
      */
-    public alert(message: string, context?: object) {
-        return this.implementation("alert", this.interpolate(message, context));
+    public alertSync(message: string, context?: object) {
+        return this.implementationSync("alert", this.interpolate(message, context));
     }
 
     /**
@@ -73,8 +69,8 @@ export default abstract class Logger extends LoggerSync {
      * @param message The message to log
      * @param context The context data to use with the message
      */
-    public critical(message: string, context?: object) {
-        return this.implementation("critical", this.interpolate(message, context));
+    public criticalSync(message: string, context?: object) {
+        return this.implementationSync("critical", this.interpolate(message, context));
     }
 
     /**
@@ -84,8 +80,8 @@ export default abstract class Logger extends LoggerSync {
      * @param message The message to log
      * @param context The context data to use with the message
      */
-    public error(message: string, context?: object) {
-        return this.implementation("error", this.interpolate(message, context));
+    public errorSync(message: string, context?: object) {
+        return this.implementationSync("error", this.interpolate(message, context));
     }
 
     /**
@@ -97,8 +93,8 @@ export default abstract class Logger extends LoggerSync {
      * @param message The message to log
      * @param context The context data to use with the message
      */
-    public warning(message: string, context?: object) {
-        return this.implementation("warning", this.interpolate(message, context));
+    public warningSync(message: string, context?: object) {
+        return this.implementationSync("warning", this.interpolate(message, context));
     }
 
     /**
@@ -107,8 +103,8 @@ export default abstract class Logger extends LoggerSync {
      * @param message The message to log
      * @param context The context data to use with the message
      */
-    public notice(message: string, context?: object) {
-        return this.implementation("notice", this.interpolate(message, context));
+    public noticeSync(message: string, context?: object) {
+        return this.implementationSync("notice", this.interpolate(message, context));
     }
 
     /**
@@ -119,8 +115,8 @@ export default abstract class Logger extends LoggerSync {
      * @param message The message to log
      * @param context The context data to use with the message
      */
-    public info(message: string, context?: object) {
-        return this.implementation("info", this.interpolate(message, context));
+    public infoSync(message: string, context?: object) {
+        return this.implementationSync("info", this.interpolate(message, context));
     }
 
     /**
@@ -129,8 +125,8 @@ export default abstract class Logger extends LoggerSync {
      * @param message The message to log
      * @param context The context data to use with the message
      */
-    public debug(message: string, context?: object) {
-        return this.implementation("debug", this.interpolate(message, context));
+    public debugSync(message: string, context?: object) {
+        return this.implementationSync("debug", this.interpolate(message, context));
     }
 
     /**
@@ -140,7 +136,7 @@ export default abstract class Logger extends LoggerSync {
      * @param message The message to log
      * @param context The context data to use with the message
      */
-    public log(level: string, message: string, context?: object) {
-        return this.implementation(level, this.interpolate(message, context));
+    public logSync(level: string, message: string, context?: object) {
+        return this.implementationSync(level, this.interpolate(message, context));
     }
 }
