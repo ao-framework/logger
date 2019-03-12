@@ -47,7 +47,8 @@ export default abstract class Logger extends LoggerSync {
      * @param context The context data to use with the message
      */
     public emergency(message: string, context?: object) {
-        return this.implementation("emergency", this.interpolate(message, context));
+        let promise = this.implementation("emergency", this.interpolate(message, context));
+        return Promise.resolve(promise)
     }
 
     /**
@@ -60,7 +61,8 @@ export default abstract class Logger extends LoggerSync {
      * @param context The context data to use with the message
      */
     public alert(message: string, context?: object) {
-        return this.implementation("alert", this.interpolate(message, context));
+        let promise = this.implementation("alert", this.interpolate(message, context));
+        return Promise.resolve(promise)
     }
 
     /**
@@ -72,7 +74,8 @@ export default abstract class Logger extends LoggerSync {
      * @param context The context data to use with the message
      */
     public critical(message: string, context?: object) {
-        return this.implementation("critical", this.interpolate(message, context));
+        let promise = this.implementation("critical", this.interpolate(message, context));
+        return Promise.resolve(promise)
     }
 
     /**
@@ -83,7 +86,8 @@ export default abstract class Logger extends LoggerSync {
      * @param context The context data to use with the message
      */
     public error(message: string, context?: object) {
-        return this.implementation("error", this.interpolate(message, context));
+        let promise = this.implementation("error", this.interpolate(message, context));
+        return Promise.resolve(promise)
     }
 
     /**
@@ -96,7 +100,8 @@ export default abstract class Logger extends LoggerSync {
      * @param context The context data to use with the message
      */
     public warning(message: string, context?: object) {
-        return this.implementation("warning", this.interpolate(message, context));
+        let promise = this.implementation("warning", this.interpolate(message, context));
+        return Promise.resolve(promise)
     }
 
     /**
@@ -106,7 +111,8 @@ export default abstract class Logger extends LoggerSync {
      * @param context The context data to use with the message
      */
     public notice(message: string, context?: object) {
-        return this.implementation("notice", this.interpolate(message, context));
+        let promise = this.implementation("notice", this.interpolate(message, context));
+        return Promise.resolve(promise)
     }
 
     /**
@@ -118,7 +124,8 @@ export default abstract class Logger extends LoggerSync {
      * @param context The context data to use with the message
      */
     public info(message: string, context?: object) {
-        return this.implementation("info", this.interpolate(message, context));
+        let promise = this.implementation("info", this.interpolate(message, context));
+        return Promise.resolve(promise)
     }
 
     /**
@@ -128,7 +135,8 @@ export default abstract class Logger extends LoggerSync {
      * @param context The context data to use with the message
      */
     public debug(message: string, context?: object) {
-        return this.implementation("debug", this.interpolate(message, context));
+        let promise = this.implementation("debug", this.interpolate(message, context));
+        return Promise.resolve(promise)
     }
 
     /**
@@ -139,6 +147,7 @@ export default abstract class Logger extends LoggerSync {
      * @param context The context data to use with the message
      */
     public log(level: string, message: string, context?: object) {
-        return this.implementation(level, this.interpolate(message, context));
+        let promise = this.implementation(level, this.interpolate(message, context));
+        return Promise.resolve(promise)
     }
 }
